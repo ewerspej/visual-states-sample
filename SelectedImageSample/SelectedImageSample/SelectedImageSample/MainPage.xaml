@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SelectedImageSample.MainPage">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="ImageButtonStyle" TargetType="ImageButton">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+          <VisualStateGroupList>
+            <VisualStateGroup x:Name="CommonStates">
+              <VisualState x:Name="Selected">
+                <VisualState.Setters>
+                  <Setter Property="BorderColor" Value="Blue" />
+                </VisualState.Setters>
+              </VisualState>
+            </VisualStateGroup>
+          </VisualStateGroupList>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <Grid RowDefinitions="50, 100, 5, 100, 5, 50, 100, 100, 100" ColumnDefinitions="*, *, *, *"
+        Padding="25, 35, 25, 35" ColumnSpacing="5" RadioButtonGroup.GroupName="mobileNetworks">
+
+    <Label Grid.Row="0" Grid.ColumnSpan="4"
+           Text="Select Network"
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+    <ImageButton Source="first.png" Grid.Row="1" Grid.Column="0" BorderWidth="2"  HeightRequest="50" WidthRequest="50" CornerRadius="10" Clicked="SelectImage" Style="{StaticResource ImageButtonStyle}"/>
+    <ImageButton Source="second.png" Grid.Row="1" Grid.Column="1" BorderWidth="2" HeightRequest="50" WidthRequest="50" CornerRadius="10" Clicked="SelectImage" Style="{StaticResource ImageButtonStyle}"/>
+    <ImageButton Source="third.png" Grid.Row="1" Grid.Column="2" BorderWidth="2" HeightRequest="50" WidthRequest="50" CornerRadius="10" Clicked="SelectImage" Style="{StaticResource ImageButtonStyle}"/>
+    <ImageButton Source="fourth.png" Grid.Row="1" Grid.Column="3" BorderWidth="2" HeightRequest="50" WidthRequest="50" CornerRadius="10" Clicked="SelectImage" Style="{StaticResource ImageButtonStyle}"/>
+
+  </Grid>
+
+</ContentPage>
